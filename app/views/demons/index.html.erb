@@ -1,25 +1,11 @@
 <h1>All Demons</h1>
 
-<ul>
-  <% @demons.each do |demon| %>
-      <h2><%= demon.name %></h2>
-    <li>
-      <%= demon.title %>
-      <%= demon.description %>
-      <%= image_tag "https://example.com/image.jpg", alt: "Image description" %>
-
-      <%= demon.image_url %>
-    </li>
-  <% end %>
-</ul>
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-  </body>
-</html>
+<% @demons.each do |demon| %>
+  <h2><%= demon.name %></h2>
+  <ul>
+  <p><h4> Title: <%= demon.title %> </h4></p>
+  <p><h4>Description:</h4></p>
+  <p><%= demon.description %></p>
+  <%= demon.image_url %>
+  </ul>
+<% end %>
