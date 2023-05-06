@@ -1,16 +1,19 @@
 <h1>All Demons</h1>
 
+<%= link_to "Create New Demon!", new_demon_path %>
+<hr />
+
 <ul>
   <% @demons.each do |demon| %>
+    </li>
+    <img src="<%= demon.image_url %>" width="300" height="300">
     <li>
       <%= link_to demon.name, demon %>
       </a>
-    </li>
-    <img src="<%= demon.image_url %>" width="200" height="200">
+    <hr />
   <% end %>
 </ul>
 
 
-<%= link_to "Create New Demon!", new_demon_path %>
 
 

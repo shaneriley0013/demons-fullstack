@@ -1,7 +1,16 @@
-<h2><%= @demon.name %></h2>
-  <%= @demon.image_url %>
+<h1><%= @demon.name %></h1>
+  <img src="<%= @demon.image_url %>" width="300" height="300">
   
   <p><h4> <strong>Title:</strong> <%= @demon.title %></p>
   <p><h4>Description:</h4></p>
   <p><%= @demon.description %></p>
   
+<ul>
+  <li><%= link_to "Edit This Demon", edit_demon_path(@demon) %></li>
+  <li><%= link_to "Destroy This Demon", demon_path(@demon), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+  <li><%= link_to "Back to all Demonzz", demons_path(@demon) %></li>
+</ul>
+
